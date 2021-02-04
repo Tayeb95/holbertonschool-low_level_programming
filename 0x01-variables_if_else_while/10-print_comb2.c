@@ -2,6 +2,7 @@
 /**
  * main - main block
  * Description: Print numbers from 0 to 99.
+ * Return: 0
 */
 int main(void)
 {
