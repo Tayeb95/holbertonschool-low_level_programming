@@ -1,24 +1,25 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
- * main - check the code for Holberton School students.
- * Return: Always 0.
- */
-int main(void)
+* manual - actually does all the job
+* @n: search square root of this
+* @i: variable square attempt
+* Return: root or -1
+*/
+int manual(int n, int i)
 {
-    int r;
+	if (i * i < n)
+		return (manual(n, i + 1));
+	if (i * i == n)
+		return (i);
+	return (-1);
+}
 
-    r = _sqrt_recursion(1);
-    printf("%d\n", r);
-    r = _sqrt_recursion(1024);
-    printf("%d\n", r);
-    r = _sqrt_recursion(16);
-    printf("%d\n", r);
-    r = _sqrt_recursion(17);
-    printf("%d\n", r);
-    r = _sqrt_recursion(25);
-    printf("%d\n", r);
-    r = _sqrt_recursion(-1);
-    printf("%d\n", r);
-    return (0);
+/**
+ * _sqrt_recursion - square root with recursion?
+ * @n: search square root of this
+ * Return: manual's
+ */
+int _sqrt_recursion(int n)
+{
+	return (manual(n, 0));
 }
