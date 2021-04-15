@@ -1,25 +1,27 @@
 #include "holberton.h"
+#include <stdlib.h>
 
 /**
- * _calloc - allocates memory for an array given number of elements and size
+ * _calloc - allocate a 2 dimensional array of int
  * @nmemb: number of elements
- * @size: size of each element
- * Return: Null if error, else pointer to allocated memory
+ * @size: size of element
+ * Return: pointer to width * height array intialized to 0
+ * or NULL on failure
  */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *p;
+	char *ar;
 	unsigned int i;
 
-	if (nmemb <= 0 || size <= 0)
+	if (nmemb < 1 || size < 1)
 		return (NULL);
 
-	p = malloc(nmemb * size);
-	if (p == NULL)
-		return (NULL);
-	for (i = 0; i < nmemb; i++)
-		p[i] = 0;
+	ar = malloc(nmemb * size);
 
-	return (p);
+	if (ar == NULL)
+		return (NULL);
+	for (i = 0; i < (nmemb * size); i++)
+		ar[i] = 0;
+	return (ar);
 }
